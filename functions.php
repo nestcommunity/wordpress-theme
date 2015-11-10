@@ -1,7 +1,16 @@
 <?php
 /**
+* ----------------------------
 * The Wordpress functions file
+* ----------------------------
 */
+
+//Remove ACF
+define('ACF_LITE', false);
+
+//Include plugins
+require_once('plugins/custom-permalinks/custom-permalinks.php');
+require_once('plugins/advanced-custom-fields/acf.php');
 
 /**
 * Change the admin footer
