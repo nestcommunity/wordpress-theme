@@ -1,0 +1,6 @@
+deployment:
+  staging:
+    branch: master
+    codedeploy:
+      nest:
+        deployment_group: nest
