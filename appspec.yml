@@ -5,5 +5,5 @@ files:
     destination: /home/ubuntu/temp
 hooks:
   AfterInstall:
-    - location: /home/ubuntu/deploy/after.sh
+    - location: /home/ubuntu/after.sh
       runas: ubuntu
