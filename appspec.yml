@@ -4,9 +4,6 @@ files:
   - source: /
     destination: /home/ubuntu/temp
 hooks:
-  BeforeInstall:
-    - location: /home/ubuntu/deploy/before.sh
-      runas: ubuntu
   AfterInstall:
     - location: /home/ubuntu/deploy/after.sh
       runas: ubuntu
