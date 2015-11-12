@@ -2,8 +2,4 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/temp
-hooks:
-  AfterInstall:
-    - location: /home/ubuntu/after.sh
-      runas: ubuntu
+    destination: /home/ubuntu/www/public/wp-contents/themes/nest-community
