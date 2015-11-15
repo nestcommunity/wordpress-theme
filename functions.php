@@ -40,3 +40,13 @@ function my_custom_login_logo()
 {
     echo '<style  type="text/css"> h1 a {  background-image:url("/wp-content/themes/nest-community/images/login.png")  !important; width:200px !important; height: 150px !important; background-size: 200px !important; } </style>';
 }
+
+/**
+* Remove menu items
+*/
+add_action( 'admin_menu', 'remove_menus' );
+function remove_menus(){
+	remove_menu_page( 'edit.php' );
+	remove_menu_page( 'edit-comments.php' );
+	remove_menu_page( 'upload.php' );   
+}
