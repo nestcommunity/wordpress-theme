@@ -7,3 +7,6 @@ hooks:
   BeforeInstall:
     - location: deploy/before.sh
       runas: root
+  AfterInstall:
+    - location: deploy/after.sh
+      runas: root
