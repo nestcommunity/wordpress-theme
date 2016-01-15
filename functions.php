@@ -1,182 +1,105 @@
 <?php
-	
-if(function_exists("register_field_group"))
+/**
+* ----------------------------
+* The Wordpress functions file
+* ----------------------------
+*/
+
+//Remove ACF
+define('ACF_LITE', false);
+
+//Include plugins
+require_once('plugins/custom-permalinks/custom-permalinks.php');
+require_once('plugins/advanced-custom-fields/acf.php');
+require_once('acf.php');
+
+/**
+* Change the admin footer
+*/
+add_filter('admin_footer_text', 'remove_footer_admin');
+function remove_footer_admin (){
+    echo '<span id="footer-thankyou">Developed by the nest builders</span>';
+}
+
+/**
+* Change the admin bar
+*/
+add_action( 'admin_bar_menu', 'clean_admin_toolbar', 999 );
+function clean_admin_toolbar( $wp_toolbar ) {
+	$wp_toolbar->remove_node( 'wp-logo' );
+	$wp_toolbar->remove_node('comments');
+	$wp_toolbar->remove_node('new-content');
+	$wp_toolbar->remove_node('wpseo-menu');
+	$wp_toolbar->remove_node('search');
+}
+
+/**
+* Add a custom login logo
+*/
+add_action('login_head',  'my_custom_login_logo');
+function my_custom_login_logo()
 {
-	register_field_group(array (
-		'id' => 'acf_event',
-		'title' => 'Event',
-		'fields' => array (
-			array (
-				'key' => 'field_5648637d5cbcc',
-				'label' => 'Date',
-				'name' => 'date',
-				'type' => 'date_picker',
-				'instructions' => 'Select a date of the event',
-				'required' => 1,
-				'date_format' => 'yymmdd',
-				'display_format' => 'dd/mm/yy',
-				'first_day' => 1,
-			),
-			array (
-				'key' => 'field_564863a95cbcd',
-				'label' => 'All day event?',
-				'name' => 'all_day_event',
-				'type' => 'true_false',
-				'required' => 1,
-				'message' => '',
-				'default_value' => 0,
-			),
-			array (
-				'key' => 'field_564863d85cbce',
-				'label' => 'Time',
-				'name' => 'time',
-				'type' => 'text',
-				'instructions' => 'What time is the event?',
-				'required' => 1,
-				'conditional_logic' => array (
-					'status' => 1,
-					'rules' => array (
-						array (
-							'field' => 'field_564863a95cbcd',
-							'operator' => '!=',
-							'value' => '1',
-						),
-					),
-					'allorany' => 'all',
-				),
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
-			),
-		),
-		'location' => array (
-			array (
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'event',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-		),
-		'options' => array (
-			'position' => 'acf_after_title',
-			'layout' => 'no_box',
-			'hide_on_screen' => array (
-				0 => 'excerpt',
-				1 => 'custom_fields',
-				2 => 'discussion',
-				3 => 'comments',
-				4 => 'revisions',
-				5 => 'slug',
-				6 => 'author',
-				7 => 'format',
-				8 => 'featured_image',
-				9 => 'categories',
-				10 => 'tags',
-				11 => 'send-trackbacks',
-			),
-		),
-		'menu_order' => 0,
-	));
-	register_field_group(array (
-		'id' => 'acf_startup',
-		'title' => 'Startup',
-		'fields' => array (
-			array (
-				'key' => 'field_569914be1f86f',
-				'label' => 'Startup Name',
-				'name' => 'startup_name',
-				'type' => 'text',
-				'required' => 1,
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'none',
-				'maxlength' => '',
-			),
-			array (
-				'key' => 'field_569914cc1f870',
-				'label' => 'Description',
-				'name' => 'description',
-				'type' => 'textarea',
-				'required' => 1,
-				'default_value' => '',
-				'placeholder' => '',
-				'maxlength' => '',
-				'rows' => '',
-				'formatting' => 'br',
-			),
-			array (
-				'key' => 'field_569914e11f871',
-				'label' => 'Logo',
-				'name' => 'logo',
-				'type' => 'image',
-				'instructions' => 'Exact pixel size TBC',
-				'save_format' => 'object',
-				'preview_size' => 'thumbnail',
-				'library' => 'uploadedTo',
-			),
-			array (
-				'key' => 'field_569914f41f872',
-				'label' => 'Email Address',
-				'name' => 'email_address',
-				'type' => 'email',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-			),
-			array (
-				'key' => 'field_569915081f873',
-				'label' => 'Website',
-				'name' => 'website',
-				'type' => 'text',
-				'instructions' => 'This must include http:// or https://',
-				'default_value' => '',
-				'placeholder' => 'http://',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'none',
-				'maxlength' => '',
-			),
-		),
-		'location' => array (
-			array (
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'startup',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-		),
-		'options' => array (
-			'position' => 'normal',
-			'layout' => 'no_box',
-			'hide_on_screen' => array (
-				0 => 'permalink',
-				1 => 'the_content',
-				2 => 'excerpt',
-				3 => 'custom_fields',
-				4 => 'discussion',
-				5 => 'comments',
-				6 => 'revisions',
-				7 => 'slug',
-				8 => 'author',
-				9 => 'format',
-				10 => 'featured_image',
-				11 => 'categories',
-				12 => 'tags',
-				13 => 'send-trackbacks',
-			),
-		),
-		'menu_order' => 0,
-	));
+    echo '<style  type="text/css"> h1 a {  background-image:url("/wp-content/themes/nest-community/images/login.png")  !important; width:200px !important; height: 150px !important; background-size: 200px !important; } </style>';
+}
+
+/**
+* Remove menu items
+*/
+add_action( 'admin_menu', 'remove_menus' );
+function remove_menus(){
+	remove_menu_page( 'edit.php' );
+	remove_menu_page( 'edit-comments.php' );
+	remove_menu_page( 'upload.php' );
+}
+
+/**
+* Register even custom post type
+*/
+add_action('init', 'portfolio_post_type', 0);
+function portfolio_post_type() {
+
+	$labels = array(
+		'name'                => _x( 'Event', 'Post Type General Name', 'text_domain' ),
+		'singular_name'       => _x( 'Event', 'Post Type Singular Name', 'text_domain' ),
+		'menu_name'           => __( 'Events', 'text_domain' ),
+		'parent_item_colon'   => __( '', 'text_domain' ),
+		'all_items'           => __( 'All Events', 'text_domain' ),
+		'view_item'           => __( 'View Event', 'text_domain' ),
+		'add_new_item'        => __( 'Add New Event', 'text_domain' ),
+		'add_new'             => __( 'New Event', 'text_domain' ),
+		'edit_item'           => __( 'Edit Event', 'text_domain' ),
+		'update_item'         => __( 'Update Event', 'text_domain' ),
+		'search_items'        => __( 'Search events', 'text_domain' ),
+		'not_found'           => __( 'No events found', 'text_domain' ),
+		'not_found_in_trash'  => __( 'No events found in bin', 'text_domain' ),
+	);
+	$rewrite = array(
+		'slug'                => 'event',
+		'with_front'          => true,
+		'pages'               => false,
+		'feeds'               => false,
+	);
+	$args = array(
+		'label'               => __( 'event', 'text_domain' ),
+		'description'         => __( 'nest events', 'text_domain' ),
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor'),
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => false,
+		'menu_position'       => 20,
+		'menu_icon'           => 'dashicons-calendar-alt',
+		'can_export'          => true,
+		'has_archive'         => false,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'query_var'           => 'event',
+		'rewrite'             => $rewrite,
+		'capability_type'     => 'page',
+	);
+	register_post_type( 'event', $args );
+
 }
