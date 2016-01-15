@@ -11,6 +11,7 @@ define('ACF_LITE', false);
 //Include plugins
 require_once('plugins/custom-permalinks/custom-permalinks.php');
 require_once('plugins/advanced-custom-fields/acf.php');
+require_once('plugins/acf-repeater/acf-repeater.php');
 require_once('acf.php');
 
 /**
@@ -154,5 +155,57 @@ function startup_post_type() {
 		'capability_type'     => 'page',
 	);
 	register_post_type( 'startup', $args );
+
+}
+
+/**
+* Register members custom post type
+*/
+add_action('init', 'member_post_type', 0);
+function member_post_type() {
+
+	$labels = array(
+		'name'                => _x( 'Member', 'Post Type General Name', 'text_domain' ),
+		'singular_name'       => _x( 'Member', 'Post Type Singular Name', 'text_domain' ),
+		'menu_name'           => __( 'Members', 'text_domain' ),
+		'parent_item_colon'   => __( '', 'text_domain' ),
+		'all_items'           => __( 'All Members', 'text_domain' ),
+		'view_item'           => __( 'View Member', 'text_domain' ),
+		'add_new_item'        => __( 'Add New Member', 'text_domain' ),
+		'add_new'             => __( 'New Member', 'text_domain' ),
+		'edit_item'           => __( 'Edit Member', 'text_domain' ),
+		'update_item'         => __( 'Update Member', 'text_domain' ),
+		'search_items'        => __( 'Search Members', 'text_domain' ),
+		'not_found'           => __( 'No members found', 'text_domain' ),
+		'not_found_in_trash'  => __( 'No members found in bin', 'text_domain' ),
+	);
+	$rewrite = array(
+		'slug'                => 'member',
+		'with_front'          => true,
+		'pages'               => false,
+		'feeds'               => false,
+	);
+	$args = array(
+		'label'               => __( 'member', 'text_domain' ),
+		'description'         => __( 'nest members', 'text_domain' ),
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor'),
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => false,
+		'menu_position'       => 20,
+		'menu_icon'           => 'dashicons-groups',
+		'can_export'          => true,
+		'has_archive'         => false,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'query_var'           => 'member',
+		'rewrite'             => $rewrite,
+		'capability_type'     => 'page',
+	);
+	register_post_type( 'member', $args );
 
 }
