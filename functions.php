@@ -53,10 +53,10 @@ function remove_menus(){
 }
 
 /**
-* Register even custom post type
+* Register event custom post type
 */
-add_action('init', 'portfolio_post_type', 0);
-function portfolio_post_type() {
+add_action('init', 'event_post_type', 0);
+function event_post_type() {
 
 	$labels = array(
 		'name'                => _x( 'Event', 'Post Type General Name', 'text_domain' ),
@@ -101,5 +101,58 @@ function portfolio_post_type() {
 		'capability_type'     => 'page',
 	);
 	register_post_type( 'event', $args );
+
+}
+
+
+/**
+* Register startup custom post type
+*/
+add_action('init', 'startup_post_type', 0);
+function startup_post_type() {
+
+	$labels = array(
+		'name'                => _x( 'Startup', 'Post Type General Name', 'text_domain' ),
+		'singular_name'       => _x( 'Startup', 'Post Type Singular Name', 'text_domain' ),
+		'menu_name'           => __( 'Startups', 'text_domain' ),
+		'parent_item_colon'   => __( '', 'text_domain' ),
+		'all_items'           => __( 'All Startups', 'text_domain' ),
+		'view_item'           => __( 'View Startup', 'text_domain' ),
+		'add_new_item'        => __( 'Add New Startup', 'text_domain' ),
+		'add_new'             => __( 'New Startup', 'text_domain' ),
+		'edit_item'           => __( 'Edit Startup', 'text_domain' ),
+		'update_item'         => __( 'Update Startup', 'text_domain' ),
+		'search_items'        => __( 'Search Startups', 'text_domain' ),
+		'not_found'           => __( 'No startups found', 'text_domain' ),
+		'not_found_in_trash'  => __( 'No startups found in bin', 'text_domain' ),
+	);
+	$rewrite = array(
+		'slug'                => 'startup',
+		'with_front'          => true,
+		'pages'               => false,
+		'feeds'               => false,
+	);
+	$args = array(
+		'label'               => __( 'startup', 'text_domain' ),
+		'description'         => __( 'nest startups', 'text_domain' ),
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor'),
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => false,
+		'menu_position'       => 20,
+		'menu_icon'           => 'dashicons-store',
+		'can_export'          => true,
+		'has_archive'         => false,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'query_var'           => 'startup',
+		'rewrite'             => $rewrite,
+		'capability_type'     => 'page',
+	);
+	register_post_type( 'startup', $args );
 
 }
