@@ -1,6 +1,6 @@
 <?php
 	
-	if(function_exists("register_field_group"))
+if(function_exists("register_field_group"))
 {
 	register_field_group(array (
 		'id' => 'acf_event',
@@ -305,6 +305,68 @@
 				10 => 'categories',
 				11 => 'tags',
 				12 => 'send-trackbacks',
+			),
+		),
+		'menu_order' => 0,
+	));
+	register_field_group(array (
+		'id' => 'acf_resources',
+		'title' => 'Resources',
+		'fields' => array (
+			array (
+				'key' => 'field_5699350e84261',
+				'label' => 'Link',
+				'name' => 'link',
+				'type' => 'text',
+				'instructions' => 'This must include http:// or https://',
+				'default_value' => '',
+				'placeholder' => 'http://',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_5699352d84262',
+				'label' => 'Description',
+				'name' => 'description',
+				'type' => 'textarea',
+				'default_value' => '',
+				'placeholder' => '',
+				'maxlength' => '',
+				'rows' => '',
+				'formatting' => 'br',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'resources',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+				0 => 'permalink',
+				1 => 'the_content',
+				2 => 'excerpt',
+				3 => 'custom_fields',
+				4 => 'discussion',
+				5 => 'comments',
+				6 => 'revisions',
+				7 => 'slug',
+				8 => 'author',
+				9 => 'format',
+				10 => 'featured_image',
+				11 => 'categories',
+				12 => 'tags',
+				13 => 'send-trackbacks',
 			),
 		),
 		'menu_order' => 0,
