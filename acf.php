@@ -1,6 +1,6 @@
 <?php
 	
-if(function_exists("register_field_group"))
+	if(function_exists("register_field_group"))
 {
 	register_field_group(array (
 		'id' => 'acf_event',
@@ -245,6 +245,66 @@ if(function_exists("register_field_group"))
 				11 => 'categories',
 				12 => 'tags',
 				13 => 'send-trackbacks',
+			),
+		),
+		'menu_order' => 0,
+	));
+	register_field_group(array (
+		'id' => 'acf_opportunity',
+		'title' => 'Opportunity',
+		'fields' => array (
+			array (
+				'key' => 'field_56991e92e4286',
+				'label' => 'Organisation',
+				'name' => 'organisation',
+				'type' => 'text',
+				'instructions' => 'The organisation offering the opportunity',
+				'required' => 1,
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_56991ea4e4287',
+				'label' => 'Required by',
+				'name' => 'required_by',
+				'type' => 'date_picker',
+				'date_format' => 'yymmdd',
+				'display_format' => 'dd/mm/yy',
+				'first_day' => 1,
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'opportunity',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'acf_after_title',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+				0 => 'permalink',
+				1 => 'excerpt',
+				2 => 'custom_fields',
+				3 => 'discussion',
+				4 => 'comments',
+				5 => 'revisions',
+				6 => 'slug',
+				7 => 'author',
+				8 => 'format',
+				9 => 'featured_image',
+				10 => 'categories',
+				11 => 'tags',
+				12 => 'send-trackbacks',
 			),
 		),
 		'menu_order' => 0,
