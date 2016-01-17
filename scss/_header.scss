@@ -6,7 +6,7 @@
   text-indent: -9999px; // hide text
 
   background: no-repeat center;
-  background-size: auto 80%;
+  background-size: auto 55%;
 
   // will fallback to png if multiple backgrounds / svgs aren't supported
   background-image: url('../images/logo.png');
@@ -32,8 +32,8 @@
 }
 
 .header .menu a{
-  color: #676767;
-  font-weight: 500;
+  color: #111;
+  font-weight: 600;
 }
 
 .header .menu a:hover{
