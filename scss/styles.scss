@@ -6,7 +6,38 @@
 @include foundation-global-styles;
 @include foundation-grid;
 @include foundation-typography;
+
 @include foundation-button;
 @include foundation-forms;
 
-*{ color: blue; }
+@import 'header';
+@import 'menu';
+
+h1, h2{
+  font-weight: 600;
+  color: #111;
+  font-family: 'Old Standard TT', serif;
+}
+
+.page-image{
+  padding: 0;
+  background: rgb(31, 150, 104);
+  background: linear-gradient(to top right, rgb(255, 0, 0), rgb(31, 150, 104));
+}
+
+.page-image img{
+  opacity: .5;
+  min-width: 100%;
+}
+
+.page-description{
+  font-weight: 600;
+  color: #11563C;
+  font-family: 'Old Standard TT', serif;
+  font-size: 3em;
+}
+
+main section{
+  padding: 1em;
+  color: #3c3c3c;
+}

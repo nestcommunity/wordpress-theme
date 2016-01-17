@@ -1,0 +1,41 @@
+// _header.scss
+
+.header{}
+
+.header .logo{
+  text-indent: -9999px; // hide text
+
+  background: no-repeat center;
+  background-size: auto 80%;
+
+  // will fallback to png if multiple backgrounds / svgs aren't supported
+  background-image: url('../images/logo.png');
+  background-image: none, url('../images/logo.svg');
+
+  transition: opacity .15s;
+}
+
+.header .logo--white{
+  // will fallback to png if multiple backgrounds / svgs aren't supported
+  background-image: url('../images/logo--white.png');
+  background-image: none, url('../images/logo--white.svg');
+}
+
+.header .logo--black{
+  // will fallback to png if multiple backgrounds / svgs aren't supported
+  background-image: url('../images/logo--black.png');
+  background-image: none, url('../images/logo--black.svg');
+}
+
+.header .logo:hover{
+  opacity: .9;
+}
+
+.header .menu a{
+  color: #676767;
+  font-weight: 500;
+}
+
+.header .menu a:hover{
+  color: #171717;
+}

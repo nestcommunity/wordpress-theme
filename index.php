@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<?php include('htmlHeader.php'); ?>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/styles.css" />
+<?php include('header.php'); ?>
+<?php include('main.php'); ?>
 
-  <title>nest</title>
-
-</head>
-<body>
-</body>
-</html>
+<?php include('htmlFooter.php'); ?>
