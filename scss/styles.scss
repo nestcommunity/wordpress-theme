@@ -1,0 +1,12 @@
+// main.scss
+
+@import 'settings';
+@import 'foundation';
+
+@include foundation-global-styles;
+@include foundation-grid;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+
+*{ color: blue; }
