@@ -10,6 +10,5 @@
 
 </head>
 <body>
-  This is index.php
 </body>
 </html>
