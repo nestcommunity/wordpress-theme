@@ -2,9 +2,8 @@ machine:
   php:
     version: 5.6.5
 dependencies:
-  post:
+  pre:
     - npm install gulp -g
-    - npm install
     - gulp
 test:
   override:
