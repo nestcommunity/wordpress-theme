@@ -9,7 +9,6 @@ dependencies:
   post:
     - gulp scripts
     - gulp sass
-    - gulp browser-sync
 test:
   override:
     - echo "No Tests"
