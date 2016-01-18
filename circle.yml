@@ -12,6 +12,8 @@ dependencies:
 test:
   override:
     - echo "No Tests"
+  post:
+    - rm -r node_modules
 deployment:
   staging:
     branch: master
