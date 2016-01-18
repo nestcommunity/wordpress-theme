@@ -1,4 +1,5 @@
 'use strict';
+require('es6-promise').polyfill();
 
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
