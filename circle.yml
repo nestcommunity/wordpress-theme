@@ -1,6 +1,11 @@
 machine:
   php:
     version: 5.6.5
+dependencies:
+  post:
+    - npm install gulp -g
+    - npm install
+    - gulp
 test:
   override:
     - echo "No Tests"
