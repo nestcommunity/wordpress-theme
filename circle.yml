@@ -5,7 +5,7 @@ dependencies:
   pre:
     - npm install gulp -g
   override:
-  	- npm install
+    - npm install
   post:
     - gulp
 test:
