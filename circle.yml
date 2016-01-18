@@ -4,6 +4,9 @@ machine:
 dependencies:
   pre:
     - npm install gulp -g
+  override:
+  	- npm install
+  post:
     - gulp
 test:
   override:
