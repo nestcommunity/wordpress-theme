@@ -7,7 +7,9 @@ dependencies:
   override:
     - npm install
   post:
-    - gulp
+    - gulp scripts
+    - gulp sass
+    - gulp browser-sync
 test:
   override:
     - echo "No Tests"
