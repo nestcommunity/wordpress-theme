@@ -9,6 +9,9 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,900italic,900,700italic,700,500italic,500,400italic,300italic,300,100italic,100' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/styles.css" />
 
+  <script src="https://use.typekit.net/piz4unk.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
   <title>nest</title>
 
 </head>
