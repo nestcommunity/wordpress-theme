@@ -1,7 +1,18 @@
 // main.scss
+@font-face {
+	font-family: 'Charlottely';
+	src: url('../fonts/charlottely.eot');
+	src: url('../fonts/charlottely.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/charlottely.woff2') format('woff2'),
+	url('../fonts/charlottely.woff') format('woff'),
+	url('../fonts/charlottely.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
 
 $secondary-font-family: "din-condensed-web",sans-serif;
 $text-font-family: "athelas",serif;
+$heading-font: Charlottely,serif;
 $black-color: #2D2D2D;
 
 @import 'settings';
@@ -13,36 +24,15 @@ $black-color: #2D2D2D;
 
 @include foundation-button;
 @include foundation-forms;
+@import "animate";
 
 @import 'header';
-@import 'menu';
-@import 'person';
+@import 'footer';
 
-h1, h2{
-  font-weight: 600;
-  color: #111;
-  font-family: 'Old Standard TT', serif;
+main.home {
+	@import 'home';
 }
 
-.page-image{
-  padding: 0;
-  background: rgb(31, 150, 104);
-  background: linear-gradient(to top right, rgb(255, 0, 0), rgb(31, 150, 104));
-}
-
-.page-image img{
-  opacity: .5;
-  min-width: 100%;
-}
-
-.page-description{
-  font-weight: 600;
-  color: #11563C;
-  font-family: 'Old Standard TT', serif;
-  font-size: 3em;
-}
-
-main section{
-  padding: 1em;
-  color: #3c3c3c;
+p {
+	font-family: $text-font-family;
 }

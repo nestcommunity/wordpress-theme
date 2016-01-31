@@ -4,7 +4,7 @@
       <a href="/"><h1 class="logo logo--black">nest</h1></a>
     </div>
     <div class="medium-10 columns">
-      <ul class="menu row">
+      <ul class="menu">
         <li><a href="#">About</a></li>
         <li><a href="#">People</a></li>
         <li><a href="#">Events</a></li>

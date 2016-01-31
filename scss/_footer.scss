@@ -1,0 +1,37 @@
+// _footer.scss
+
+footer {
+	background-color: $black-color;
+	width: 100%;
+	padding: 35px 0;
+
+	p, a {
+		color: white;
+		font-family: $secondary-font-family;
+		text-align: right;
+		display: inline-block;
+		margin-left: 15px;
+		float: right;
+		margin-bottom: 0;
+
+		&:hover {
+			color: white;
+		}
+	}
+}
+
+@media (max-width: 640px) {
+	footer {
+		text-align: center;
+
+		img {
+			margin-bottom: 20px;
+		}
+
+		p, a {
+			float: none;
+			margin-left: 7px;
+			margin-right: 7px;
+		}
+	}
+}
