@@ -30,6 +30,8 @@ $black-color: #2D2D2D;
 @import 'footer';
 
 main.home {
+	background-image: url('../images/background.png');
+
 	@import 'home';
 }
 
