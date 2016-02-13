@@ -35,6 +35,23 @@ function clean_admin_toolbar( $wp_toolbar ) {
 }
 
 /**
+ * Remove the admin bar
+ */
+add_filter('show_admin_bar', '__return_false');
+
+/**
+ * Register menus
+ */
+function register_my_menus() {
+	register_nav_menus(
+		array(
+			'top-menu' => __( 'Top Menu' ),
+		)
+	);
+}
+add_action( 'init', 'register_my_menus' );
+
+/**
 * Add a custom login logo
 */
 add_action('login_head',  'my_custom_login_logo');

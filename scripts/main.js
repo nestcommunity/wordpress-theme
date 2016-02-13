@@ -1,1 +1,3 @@
-$(document).foundation(); // initialize foundation
+$(document).ready(function() {
+
+});

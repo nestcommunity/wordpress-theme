@@ -11,7 +11,8 @@
   <script src="https://use.typekit.net/piz4unk.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
-  <title>nest</title>
+  <title><?php wp_title(); ?></title>
+  <?php wp_head(); ?>
 
 </head>
 <body>

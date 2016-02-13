@@ -86,8 +86,7 @@ gulp.task('scripts', function() {
 });
 
 // Default task to be run with `gulp`
-gulp.task('default', ['scripts', 'sass', 'browser-sync'], function () {
+gulp.task('default', ['scripts', 'sass'], function () {
   gulp.watch("scripts/**/*.js", ['scripts']);
   gulp.watch("scss/**/*.scss", ['sass']);
-  gulp.watch("**/*.php").on('change', browserSync.reload);
 });
