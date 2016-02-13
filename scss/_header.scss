@@ -46,13 +46,35 @@
       display: inline-block;
       font-family: $secondary-font-family;
       font-weight: 400;
-      text-transform: uppercase;
       margin-left: 15px;
       margin-right: 15px;
       font-size: 1.5em;
 
+      &.current-menu-item a::after {
+        opacity: 1;
+      }
+
       a {
+        display: block;
         color: $black-color;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover::after {
+          opacity: 1;
+        }
+
+        //Underline on hover
+        &::after {
+          position: relative;
+          content: '';
+          display: block;
+          height: 3px;
+          top: 0px;
+          opacity: 0;
+          transition: 0.1s all linear;
+          background-color: $black-color;
+        }
       }
     }
   }

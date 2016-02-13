@@ -6,7 +6,7 @@ Template Name: Home Page
 get_header(); ?>
 
 	<main class="home">
-		<div class="page-background"></div>
+		<div class="page-background home-background"></div>
 		<div class="row about contents">
 			<div class="columns medium-6">
 				<h2>Turning ideas<br/>into action</h2>
