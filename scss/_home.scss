@@ -25,29 +25,31 @@
 	margin-top: 12vh;
 	z-index: 5;
 
-	h2 {
-		font-family: $heading-font;
-		font-size: 7.5em;
-		line-height: 1em;
-		transform: rotate(354deg);
-		position: absolute;
-		margin-left: 60px;
+	.charlottely-headings {
+		h2 {
+			font-family: $heading-font;
+			font-size: 7.5em;
+			line-height: 1em;
+			transform: rotate(354deg);
+			position: absolute;
+			margin-left: 60px;
+		}
+
+		h3 {
+			font-family: $heading-font;
+			font-size: 6em;
+			line-height: 1em;
+			transform: rotate(354deg);
+		}
 	}
 
-	h3 {
-		font-family: $heading-font;
-		font-size: 6em;
-		line-height: 1em;
-		transform: rotate(354deg);
-	}
-
-	p {
+	p:first-child {
 		margin-top: 100px;
 	}
 }
 
 @media (max-width: 1150px) {
-	.about {
+	.about .charlottely-headings  {
 		h2 {
 			font-size: 6em;
 		}
@@ -57,11 +59,13 @@
 
 @media (max-width: 940px) {
 	.about {
-		h2 {
-			font-size: 4em;
+		.charlottely-headings {
+			h2 {
+				font-size: 4em;
+			}
 		}
 
-		p {
+		p:first-child {
 			margin-top: 60px;
 		}
 	}
@@ -72,7 +76,7 @@
 		height: 300px;
 	}
 
-	.about {
+	.about .charlottely-headings {
 		h2 {
 			position: relative;
 			text-align: center;
