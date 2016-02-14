@@ -24,3 +24,31 @@
 		opacity: 0.75;
 	}
 }
+
+.selector {
+	margin-bottom: 60px;
+
+	.individual-selector, .company-selector {
+		text-align: center;
+		font-family: $secondary-font-family;
+		font-size: 1.3em;
+		border: solid 1px #979797;
+		padding: 10px 0;
+		cursor: pointer;
+
+		&.active {
+			box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.4);
+		}
+	}
+
+	.individual-selector {
+		margin-left: -1px;
+		border-bottom-right-radius: 20px;
+		border-top-right-radius: 20px;
+	}
+
+	.company-selector {
+		border-bottom-left-radius: 20px;
+		border-top-left-radius: 20px;
+	}
+}

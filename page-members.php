@@ -17,6 +17,14 @@ get_header(); ?>
 			</div>
 		<?php endwhile; endif; ?>
 		<div class="contents">
+			<div class="row selector">
+				<div class="columns medium-offset-4 medium-2 company-selector active">
+					Companies
+				</div>
+				<div class="columns medium-2 end individual-selector active">
+					Individuals
+				</div>
+			</div>
 			<div class="row">
 				<div class="columns medium-10 medium-offset-1 end">
 					<div class="row">
@@ -34,19 +42,21 @@ get_header(); ?>
 						<?php while ( $theQuery->have_posts() ) : $theQuery->the_post(); ?>
 							<?php $postCounter++; ?>
 							<div class="columns large-3 <?php if ($postCounter == $numberOfPosts) echo 'end'; ?>">
-								<a class="member" href="#">
-									<?php if (get_post_type() == 'startup'): ?>
+								<?php if (get_post_type() == 'startup'): ?>
+									<a class="member company" href="#">
 										<?php $logo = get_field('logo'); ?>
 										<img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt'] ?>" />
 										<h4><?php the_field('startup_name'); ?></h4>
 										<p><?php the_field('short_description'); ?></p>
-									<?php else: ?>
+									</a>
+								<?php else: ?>
+									<a class="member individual" href="#">
 										<?php $profileImage = get_field('profile_image'); ?>
 										<img src="<?php echo $profileImage['url'] ?>" alt="<?php echo $profileImage['alt'] ?>" />
 										<h4><?php the_field('first_name'); ?> <?php the_field('last_name'); ?></h4>
 										<p><?php the_field('short_bio'); ?></p>
-									<?php endif; ?>
-								</a>
+									</a>
+								<?php endif; ?>
 							</div>
 						<?php endwhile; ?>
 						<?php wp_reset_postdata(); ?>
