@@ -1,5 +1,4 @@
 <?php
-
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
@@ -220,6 +219,7 @@ if(function_exists("register_field_group"))
 				'label' => 'Description',
 				'name' => 'description',
 				'type' => 'wysiwyg',
+				'required' => 1,
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
@@ -240,6 +240,7 @@ if(function_exists("register_field_group"))
 				'label' => 'Date',
 				'name' => 'date',
 				'type' => 'date_picker',
+				'required' => 1,
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
@@ -284,6 +285,7 @@ if(function_exists("register_field_group"))
 				'name' => 'image',
 				'type' => 'image',
 				'instructions' => 'Recommended image size: 850x300',
+				'required' => 1,
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
