@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<main class="members general-page">
+	<main class="general-page">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<div class="heading">
 				<div class="row">
