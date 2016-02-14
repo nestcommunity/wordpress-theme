@@ -1,14 +1,14 @@
   <footer>
     <div class="row">
         <div class="columns medium-2">
-            <a href="#">
+            <a href="http://www.port.ac.uk">
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/uop-logo.svg" alt="University of Portsmouth" />
             </a>
         </div>
         <div class="columns medium-8">
-            <a href="#" class="ss-icon">&#xF611;</a>
-            <a href="#" class="ss-icon">&#xF610;</a>
-            <p>For inquiries, email nest@port.ac.uk</p>
+            <a href="<?php the_field('twitter', 'option'); ?>" class="ss-icon">&#xF611;</a>
+            <a href="<?php the_field('facebook', 'option'); ?>" class="ss-icon">&#xF610;</a>
+            <p>For inquiries, email <?php the_field('email', 'option'); ?></p>
         </div>
     </div>
   </footer>

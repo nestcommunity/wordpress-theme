@@ -12,6 +12,7 @@ define('ACF_LITE', false);
 require_once('plugins/custom-permalinks/custom-permalinks.php');
 require_once('plugins/advanced-custom-fields/acf.php');
 require_once('plugins/acf-repeater/acf-repeater.php');
+require_once('plugins/acf-options-page/acf-options-page.php');
 require_once('acf.php');
 
 /**
