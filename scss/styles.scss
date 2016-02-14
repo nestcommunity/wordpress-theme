@@ -46,6 +46,12 @@ main.members .contents {
 	@import "members";
 }
 
+.calendar {
+	padding: 60px 0;
+
+	@import "calendar";
+}
+
 p {
 	font-family: $text-font-family;
 }
@@ -58,6 +64,21 @@ p {
 
 	h1 {
 		font-size: 4em;
+	}
+}
+
+.button {
+	width: 100%;
+	font-family: $secondary-font-family;
+	text-transform: uppercase;
+	font-size: 1.2em;
+	border-radius: 7px;
+	background-color: $red-color;
+	margin-top: 10px;
+	margin-bottom: 30px;
+
+	&:hover {
+		background-color: darken($red-color, 10);
 	}
 }
 

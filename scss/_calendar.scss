@@ -1,0 +1,57 @@
+h1 {
+	text-align: center;
+	font-family: $heading-font;
+	color: $black-color;
+	font-size: 4em;
+}
+
+h2 {
+	font-size: 2.5em;
+	font-family: $secondary-font-family;
+	text-align: center;
+}
+
+.featured {
+	margin-bottom: 60px;
+
+	img {
+		border-radius: 3px;
+		margin-bottom: 40px;
+	}
+}
+
+.month-divider {
+	width: 100%;
+	text-align: center;
+	background-color: $primary-color;
+	color: white;
+	font-family: $secondary-font-family;
+	font-size: 1.5em;
+	box-sizing: border-box;
+	padding: 5px 0;
+	border-radius: 7px;
+	margin-top: 40px;
+}
+
+.calendar-item {
+	h3 {
+		text-align: center;
+		font-family: $secondary-font-family;
+		font-size: 2em;
+		padding: 20px 0;
+	}
+
+	.details {
+		font-family: $secondary-font-family;
+		font-size: 1em;
+		text-align: center;
+		color: $black-color;
+		margin-bottom: 20px;
+	}
+}
+
+.line {
+	width: 100%;
+	height: 1px;
+	background-color: #979797;
+}

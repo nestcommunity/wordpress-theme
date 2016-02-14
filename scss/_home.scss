@@ -18,6 +18,13 @@
 		background-size: cover;
 		background-attachment: fixed;
 	}
+
+	&.event-background {
+		background: linear-gradient(to top right, rgba(255, 0, 0, .75), rgba(31, 150, 104, .75)), url('../images/event-background.jpg');
+		background-position: center;
+		background-size: cover;
+		background-attachment: fixed;
+	}
 }
 
 .about {

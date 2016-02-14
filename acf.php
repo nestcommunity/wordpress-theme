@@ -1,4 +1,5 @@
 <?php
+
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
@@ -78,15 +79,6 @@ if(function_exists("register_field_group"))
 				'first_day' => 1,
 			),
 			array (
-				'key' => 'field_564863a95cbcd',
-				'label' => 'All day event?',
-				'name' => 'all_day_event',
-				'type' => 'true_false',
-				'required' => 1,
-				'message' => '',
-				'default_value' => 0,
-			),
-			array (
 				'key' => 'field_564863d85cbce',
 				'label' => 'Time',
 				'name' => 'time',
@@ -97,15 +89,77 @@ if(function_exists("register_field_group"))
 					'status' => 1,
 					'rules' => array (
 						array (
-							'field' => 'field_564863a95cbcd',
+							'field' => 'null',
 							'operator' => '!=',
-							'value' => '1',
+							'value' => '',
 						),
 					),
 					'allorany' => 'all',
 				),
 				'default_value' => '',
 				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_56c0ed0208bee',
+				'label' => 'Location',
+				'name' => 'location',
+				'type' => 'text',
+				'required' => 1,
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_56c0ed1414b04',
+				'label' => 'Button Text',
+				'name' => 'button_text',
+				'type' => 'text',
+				'default_value' => 'Register to Attend',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_56c0ed2414b05',
+				'label' => 'Button Should Email?',
+				'name' => 'button_should_email',
+				'type' => 'radio',
+				'choices' => array (
+					'yes' => 'Yes',
+					'no' => 'No',
+				),
+				'other_choice' => 0,
+				'save_other_choice' => 0,
+				'default_value' => '',
+				'layout' => 'vertical',
+			),
+			array (
+				'key' => 'field_56c0ed3614b06',
+				'label' => 'Button Link',
+				'name' => 'button_link',
+				'type' => 'text',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_56c0ed2414b05',
+							'operator' => '==',
+							'value' => 'no',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => 'http://',
 				'prepend' => '',
 				'append' => '',
 				'formatting' => 'html',
@@ -139,6 +193,141 @@ if(function_exists("register_field_group"))
 				9 => 'categories',
 				10 => 'tags',
 				11 => 'send-trackbacks',
+			),
+		),
+		'menu_order' => 0,
+	));
+	register_field_group(array (
+		'id' => 'acf_featured-event',
+		'title' => 'Featured Event',
+		'fields' => array (
+			array (
+				'key' => 'field_56c0f478cac84',
+				'label' => 'Featured Event?',
+				'name' => 'featured_event',
+				'type' => 'radio',
+				'choices' => array (
+					'yes' => 'Yes',
+					'no' => 'No',
+				),
+				'other_choice' => 0,
+				'save_other_choice' => 0,
+				'default_value' => '',
+				'layout' => 'vertical',
+			),
+			array (
+				'key' => 'field_56c0f52abd415',
+				'label' => 'Description',
+				'name' => 'description',
+				'type' => 'wysiwyg',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_56c0f478cac84',
+							'operator' => '==',
+							'value' => 'yes',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'toolbar' => 'full',
+				'media_upload' => 'yes',
+			),
+			array (
+				'key' => 'field_56c0f49acac85',
+				'label' => 'Date',
+				'name' => 'date',
+				'type' => 'date_picker',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_56c0f478cac84',
+							'operator' => '==',
+							'value' => 'yes',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'date_format' => 'yymmdd',
+				'display_format' => 'dd/mm/yy',
+				'first_day' => 1,
+			),
+			array (
+				'key' => 'field_56c0f4e5cac87',
+				'label' => 'Link',
+				'name' => 'link',
+				'type' => 'page_link',
+				'required' => 1,
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_56c0f478cac84',
+							'operator' => '==',
+							'value' => 'yes',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'post_type' => array (
+					0 => 'page',
+				),
+				'allow_null' => 0,
+				'multiple' => 0,
+			),
+			array (
+				'key' => 'field_56c0f4bccac86',
+				'label' => 'Image',
+				'name' => 'image',
+				'type' => 'image',
+				'instructions' => 'Recommended image size: 850x300',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_56c0f478cac84',
+							'operator' => '==',
+							'value' => 'yes',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'save_format' => 'object',
+				'preview_size' => 'full',
+				'library' => 'all',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'page-calendar.php',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'acf_after_title',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+				0 => 'the_content',
+				1 => 'excerpt',
+				2 => 'custom_fields',
+				3 => 'discussion',
+				4 => 'comments',
+				5 => 'revisions',
+				6 => 'slug',
+				7 => 'author',
+				8 => 'format',
+				9 => 'featured_image',
+				10 => 'categories',
+				11 => 'tags',
+				12 => 'send-trackbacks',
 			),
 		),
 		'menu_order' => 0,

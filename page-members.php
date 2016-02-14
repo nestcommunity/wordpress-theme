@@ -26,7 +26,7 @@ get_header(); ?>
 				</div>
 			</div>
 			<div class="row">
-				<div class="columns medium-10 medium-offset-1 end">
+				<div class="columns small-10 small-offset-1 end">
 					<div class="row">
 						<?php
 						$args = array (
@@ -41,7 +41,7 @@ get_header(); ?>
 						?>
 						<?php while ( $theQuery->have_posts() ) : $theQuery->the_post(); ?>
 							<?php $postCounter++; ?>
-							<div class="columns large-3 <?php if ($postCounter == $numberOfPosts) echo 'end'; ?>">
+							<div class="columns small-3 <?php if ($postCounter == $numberOfPosts) echo 'end'; ?>">
 								<?php if (get_post_type() == 'startup'): ?>
 									<a class="member company" href="<?php echo get_the_ID(); ?>">
 										<?php $logo = get_field('logo'); ?>
