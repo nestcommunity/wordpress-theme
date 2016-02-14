@@ -1,0 +1,26 @@
+.member {
+	color: $black-color;
+	transition: 0.1s all linear;
+
+	img {
+		border-radius: 7px;
+		max-width: 200px;
+		width: 100%;
+	}
+
+	h4 {
+		font-size: 1.5em;
+		margin: 10px 0;
+		font-family: $secondary-font-family;
+	}
+
+	p {
+		font-size: 1em;
+		margin-bottom: 60px;
+	}
+
+	&:hover {
+		transition: 0.1s all linear;
+		opacity: 0.75;
+	}
+}
