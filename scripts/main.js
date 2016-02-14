@@ -23,6 +23,7 @@ $(document).ready(function() {
         }
     });
 
+    //Company & Individual Selector
     var companiesDisplayed = true;
     var individualsDisplayed = true;
     $('.company-selector').click(function() {
@@ -54,5 +55,44 @@ $(document).ready(function() {
             });
             individualsDisplayed = true;
         }
+    });
+
+    //Overlay Display
+    var overlayDisplayed = false;
+    $('#cross').click(function(event) {
+       $('.overlay').fadeOut();
+        event.preventDefault();
+        overlayDisplayed = false;
+    });
+    $('.member').click(function(event) {
+        event.preventDefault();
+        var memberId = $(this).attr('href');
+        var url = "/wp-content/themes/nest-community/ajax/member.php?id=" + memberId;
+        $.get(url, function(data) {
+            var data = JSON.parse(data);
+            $('.overlay-heading').html(data.heading);
+            $('.overlay-description').html(data.description);
+            $('.image').attr('src', data.image);
+            $('.facebook').attr('href', data.facebook);
+            $('.twitter').attr('href', data.twitter);
+            $('.linkedin').attr('href', data.linkedin);
+            $('.website').attr('href', data.website);
+            $('.email').html(data.email);
+            $('.phone').html(data.phone);
+
+            if (data.facebook == '') $('.facebook-container').hide();
+            if (data.twitter == '') $('.twitter-container').hide();
+            if (data.linkedin == '') $('.linkedin-container').hide();
+            if (data.website == '') $('.website').hide();
+            if (data.email == '') $('.email-container').hide();
+            if (data.phone == '') $('.phone-container').hide();
+
+            if (data.email == '' && data.phone == '') {
+                $('.contact-details').hide();
+            }
+
+            $('.overlay').fadeIn();
+            overlayDisplayed = true;
+        });
     });
 });

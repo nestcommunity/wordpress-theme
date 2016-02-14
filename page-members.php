@@ -43,14 +43,14 @@ get_header(); ?>
 							<?php $postCounter++; ?>
 							<div class="columns large-3 <?php if ($postCounter == $numberOfPosts) echo 'end'; ?>">
 								<?php if (get_post_type() == 'startup'): ?>
-									<a class="member company" href="#">
+									<a class="member company" href="<?php echo get_the_ID(); ?>">
 										<?php $logo = get_field('logo'); ?>
 										<img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt'] ?>" />
 										<h4><?php the_field('startup_name'); ?></h4>
 										<p><?php the_field('short_description'); ?></p>
 									</a>
 								<?php else: ?>
-									<a class="member individual" href="#">
+									<a class="member individual" href="<?php echo get_the_ID(); ?>">
 										<?php $profileImage = get_field('profile_image'); ?>
 										<img src="<?php echo $profileImage['url'] ?>" alt="<?php echo $profileImage['alt'] ?>" />
 										<h4><?php the_field('first_name'); ?> <?php the_field('last_name'); ?></h4>
@@ -60,6 +60,51 @@ get_header(); ?>
 							</div>
 						<?php endwhile; ?>
 						<?php wp_reset_postdata(); ?>
+					</div>
+				</div>
+			</div>
+			<div class="overlay" style="display: none">
+				<div class="overlay-box">
+					<a href="#" id="cross">x</a>
+					<div class="row">
+						<div class="columns medium-3">
+							<img src="#" class="image" />
+							<div class="row">
+								<div class="columns medium-1 facebook-container">
+									<a href="#" class="ss-icon facebook">&#xF610;</a>
+								</div>
+								<div class="columns medium-1 twitter-container">
+									<a href="#" class="ss-icon twitter">&#xF611;</a>
+								</div>
+								<div class="columns medium-1 linkedin-container">
+									<a href="#" class="ss-icon linkedin">&#xF612;</a>
+								</div>
+								<div class="columns end"></div>
+							</div>
+						</div>
+						<div class="columns medium-9">
+							<h2 class="overlay-heading">Heading</h2>
+							<p class="overlay-description">Description</p>
+							<div class="row">
+								<div class="columns medium-7 end">
+									<a href="#" target="_blank" class="button website">Visit Website</a>
+									<div class="contact-details">
+										<div class="contact email-container">
+											<span class="letter">
+												E:
+											</span>
+											<span class="email"></span>
+										</div>
+										<div class="contact phone-container">
+											<span class="letter">
+												T:
+											</span>
+											<span class="phone"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
