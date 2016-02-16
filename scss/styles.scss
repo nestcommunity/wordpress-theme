@@ -15,6 +15,7 @@ $text-font-family: "athelas",serif;
 $heading-font: Charlottely,serif;
 $black-color: #2D2D2D;
 $red-color: rgba(255, 0, 0, 0.75);
+$green-color: rgb(35, 152, 106);
 
 @import 'settings';
 @import 'foundation';
@@ -32,7 +33,7 @@ $red-color: rgba(255, 0, 0, 0.75);
 
 
 main.home {
-	//background-image: url('../images/background.png');
+	background-image: url('../images/background.png');
 
 	@import 'home';
 }
