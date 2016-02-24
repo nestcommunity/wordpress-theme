@@ -7,6 +7,7 @@
 		font-family: $heading-font;
 		color: white;
 		font-size: 4em;
+		margin-bottom: 0;
 	}
 
 	h2 {
@@ -15,11 +16,15 @@
 		color: white;
 		font-size: 1.5em;
 	}
+
+	&.solid {
+		padding: 20px 0;
+		background: $main-color;
+	}
 }
 
 .contents {
 	background-image: url('../images/background.png');
-
 	padding: 60px 0;
 }
 

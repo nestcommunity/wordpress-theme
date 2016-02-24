@@ -16,6 +16,7 @@ $heading-font: Charlottely,serif;
 $black-color: #2D2D2D;
 $red-color: rgba(255, 0, 0, 0.75);
 $green-color: rgb(35, 152, 106);
+$main-color: #00B19D;
 
 @import 'settings';
 @import 'foundation';
@@ -30,6 +31,8 @@ $green-color: rgb(35, 152, 106);
 
 @import 'header';
 @import 'footer';
+
+@import "resources";
 
 
 main.home {

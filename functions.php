@@ -9,7 +9,7 @@
 define('ACF_LITE', false);
 
 //Include plugins
-require_once('plugins/custom-permalinks/custom-permalinks.php');
+//require_once('plugins/custom-permalinks/custom-permalinks.php');
 require_once('plugins/advanced-custom-fields/acf.php');
 require_once('plugins/acf-repeater/acf-repeater.php');
 require_once('plugins/acf-options-page/acf-options-page.php');
@@ -331,6 +331,58 @@ function resource_post_type() {
 		'capability_type'     => 'page',
 	);
 	register_post_type( 'resources', $args );
+
+}
+
+/**
+ * Register resource category custom post type
+ */
+add_action('init', 'resource_category_post_type', 0);
+function resource_category_post_type() {
+
+	$labels = array(
+			'name'                => _x( 'Resource Category', 'Post Type General Name', 'text_domain' ),
+			'singular_name'       => _x( 'Resource Category', 'Post Type Singular Name', 'text_domain' ),
+			'menu_name'           => __( 'Resource Categories', 'text_domain' ),
+			'parent_item_colon'   => __( '', 'text_domain' ),
+			'all_items'           => __( 'All Categories', 'text_domain' ),
+			'view_item'           => __( 'View Category', 'text_domain' ),
+			'add_new_item'        => __( 'Add New Category', 'text_domain' ),
+			'add_new'             => __( 'New Category', 'text_domain' ),
+			'edit_item'           => __( 'Edit Category', 'text_domain' ),
+			'update_item'         => __( 'Update Category', 'text_domain' ),
+			'search_items'        => __( 'Search Categories', 'text_domain' ),
+			'not_found'           => __( 'No categories found', 'text_domain' ),
+			'not_found_in_trash'  => __( 'No categories found in bin', 'text_domain' ),
+	);
+	$rewrite = array(
+			'slug'                => 'resources',
+			'with_front'          => false,
+			'pages'               => false,
+			'feeds'               => false,
+	);
+	$args = array(
+			'label'               => __( 'resource-categories', 'text_domain' ),
+			'description'         => __( 'nest resource categories', 'text_domain' ),
+			'labels'              => $labels,
+			'supports'            => array( 'title', 'editor'),
+			'hierarchical'        => true,
+			'public'              => true,
+			'show_ui'             => true,
+			'show_in_menu'        => true,
+			'show_in_nav_menus'   => true,
+			'show_in_admin_bar'   => false,
+			'menu_position'       => 20,
+			'menu_icon'           => 'dashicons-admin-links',
+			'can_export'          => false,
+			'has_archive'         => false,
+			'exclude_from_search' => false,
+			'publicly_queryable'  => true,
+			'query_var'           => 'categories',
+			'rewrite'             => $rewrite,
+			'capability_type'     => 'post',
+	);
+	register_post_type( 'categories', $args );
 
 }
 
