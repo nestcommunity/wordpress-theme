@@ -14,7 +14,8 @@
 					<div class="columns medium-8">
 						<?php
 							$args = array (
-									'post_type' => 'resources'
+									'post_type' => 'resources',
+									'posts_per_page' => -1
 							);
 
 							$categoryId = get_the_ID();
