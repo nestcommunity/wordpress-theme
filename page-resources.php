@@ -33,7 +33,7 @@ get_header(); ?>
 						?>
 						<?php while ( $theQuery->have_posts() ) : $theQuery->the_post(); ?>
 							<?php $postCounter++; ?>
-							<div class="columns medium-3 <?php if ($postCounter == $numberOfPosts) echo 'end'; ?>">
+							<div class="columns large-3 category-container <?php if ($postCounter == $numberOfPosts) echo 'end'; ?>">
 								<a href="<?php the_permalink(); ?>" class="resource-category">
 									<div class="category">
 										<?php the_title(); ?>
