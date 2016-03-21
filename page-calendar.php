@@ -40,10 +40,11 @@ get_header(); ?>
 			<div class="row">
 				<div class="columns medium-8 medium-offset-2 ends">
 					<h1>Upcoming Events</h1>
-					<?php while ( $theQuery->have_posts() ) : $theQuery->the_post(); ?>
+					<?php while ( $theQuery->have_posts() ) : $theQuery->the_post();  ?>
 						<?php
 							$date = DateTime::createFromFormat('Ymd', get_field('date'));
 							$currentDate = new DateTime();
+							if ($date < $currentDate) continue;
 							if ($previousMonth != $date->format('F Y')):
 						?>
 								<div class="month-divider"><?php echo $date->format('F Y'); ?></div>
