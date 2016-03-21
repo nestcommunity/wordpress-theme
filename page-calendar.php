@@ -5,8 +5,10 @@ Template Name: Calendar Page
 
 $args = array (
 		'post_type' => 'event',
-		'orderby' => 'date',
-		'order' => 'ASC'
+		'order' => 'ASC',
+		'meta_key' => 'date',
+		'orderby' => 'meta_value_num',
+		'posts_per_page' => -1,
 );
 
 // The Query
@@ -41,6 +43,7 @@ get_header(); ?>
 					<?php while ( $theQuery->have_posts() ) : $theQuery->the_post(); ?>
 						<?php
 							$date = DateTime::createFromFormat('Ymd', get_field('date'));
+							$currentDate = new DateTime();
 							if ($previousMonth != $date->format('F Y')):
 						?>
 								<div class="month-divider"><?php echo $date->format('F Y'); ?></div>
