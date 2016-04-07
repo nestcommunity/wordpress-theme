@@ -79,7 +79,7 @@ gulp.task('sass', function () {
 gulp.task('scripts', function() {
   return gulp.src(paths.scripts)
     .pipe(sourcemaps.init())
-      .pipe(uglify())
+      //.pipe(uglify())
       .pipe(concat('scripts.min.js'))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('js'));
