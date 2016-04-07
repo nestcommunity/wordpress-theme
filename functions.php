@@ -385,3 +385,55 @@ function resource_category_post_type() {
 	register_post_type( 'categories', $args );
 
 }
+
+/**
+ * Register project exchange custom post type
+ */
+add_action('init', 'project_exchange_post_type', 0);
+function project_exchange_post_type() {
+
+	$labels = array(
+		'name'                => _x( 'Project Exchange', 'Post Type General Name', 'text_domain' ),
+		'singular_name'       => _x( 'Project Exchange', 'Post Type Singular Name', 'text_domain' ),
+		'menu_name'           => __( 'Project Exchange', 'text_domain' ),
+		'parent_item_colon'   => __( '', 'text_domain' ),
+		'all_items'           => __( 'All Projects', 'text_domain' ),
+		'view_item'           => __( 'View Project', 'text_domain' ),
+		'add_new_item'        => __( 'Add New Project', 'text_domain' ),
+		'add_new'             => __( 'New Project', 'text_domain' ),
+		'edit_item'           => __( 'Edit Project', 'text_domain' ),
+		'update_item'         => __( 'Update Project', 'text_domain' ),
+		'search_items'        => __( 'Search Projects', 'text_domain' ),
+		'not_found'           => __( 'No projects found', 'text_domain' ),
+		'not_found_in_trash'  => __( 'No projects found in bin', 'text_domain' ),
+	);
+	$rewrite = array(
+		'slug'                => 'project-exchange',
+		'with_front'          => false,
+		'pages'               => false,
+		'feeds'               => false,
+	);
+	$args = array(
+		'label'               => __( 'project-exchange', 'text_domain' ),
+		'description'         => __( 'nest project exchange', 'text_domain' ),
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor'),
+		'hierarchical'        => true,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => false,
+		'menu_position'       => 20,
+		'menu_icon'           => 'dashicons-welcome-learn-more',
+		'can_export'          => false,
+		'has_archive'         => false,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'query_var'           => 'project-exchange',
+		'rewrite'             => $rewrite,
+		'capability_type'     => 'post',
+	);
+	register_post_type( 'project-exchange', $args );
+
+}

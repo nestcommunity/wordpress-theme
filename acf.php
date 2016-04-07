@@ -384,6 +384,15 @@ if(function_exists("register_field_group"))
 					'group_no' => 1,
 				),
 			),
+			array (
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'page-project-exchange.php',
+					'order_no' => 0,
+					'group_no' => 2,
+				),
+			),
 		),
 		'options' => array (
 			'position' => 'normal',
@@ -680,6 +689,95 @@ if(function_exists("register_field_group"))
 					'param' => 'options_page',
 					'operator' => '==',
 					'value' => 'acf-options',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+	register_field_group(array (
+		'id' => 'acf_project-exchange',
+		'title' => 'Project Exchange',
+		'fields' => array (
+			array (
+				'key' => 'field_57068910492b9',
+				'label' => 'Required By',
+				'name' => 'required_by',
+				'type' => 'date_picker',
+				'date_format' => 'yymmdd',
+				'display_format' => 'dd/mm/yy',
+				'first_day' => 1,
+			),
+			array (
+				'key' => 'field_570689af2499f',
+				'label' => 'Image',
+				'name' => 'image',
+				'type' => 'image',
+				'instructions' => 'Square image - recommended 300x300',
+				'save_format' => 'object',
+				'preview_size' => 'thumbnail',
+				'library' => 'uploadedTo',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'project-exchange',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'acf_after_title',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+				0 => 'permalink',
+				1 => 'excerpt',
+				2 => 'custom_fields',
+				3 => 'discussion',
+				4 => 'comments',
+				5 => 'revisions',
+				6 => 'slug',
+				7 => 'author',
+				8 => 'format',
+				9 => 'featured_image',
+				10 => 'categories',
+				11 => 'tags',
+				12 => 'send-trackbacks',
+			),
+		),
+		'menu_order' => 0,
+	));
+	register_field_group(array (
+		'id' => 'acf_project-exchange-page',
+		'title' => 'Project Exchange Page',
+		'fields' => array (
+			array (
+				'key' => 'field_57068807ca8f2',
+				'label' => 'Sidebar Description',
+				'name' => 'sidebar_description',
+				'type' => 'wysiwyg',
+				'default_value' => '',
+				'toolbar' => 'full',
+				'media_upload' => 'yes',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'page-project-exchange.php',
 					'order_no' => 0,
 					'group_no' => 0,
 				),
