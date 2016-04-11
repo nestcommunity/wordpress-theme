@@ -23,7 +23,8 @@ get_header(); ?>
 						<?php
 						$args = array (
 								'post_type' => ['categories'],
-								'orderby' => 'rand'
+								'orderby' => 'rand',
+								'posts_per_page' => -1
 						);
 
 						// The Query
