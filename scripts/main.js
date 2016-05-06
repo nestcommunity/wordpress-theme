@@ -80,12 +80,24 @@ $(document).ready(function() {
             $('.email').html(data.email);
             $('.phone').html(data.phone);
 
-            if (data.facebook == '') $('.facebook-container').hide();
-            if (data.twitter == '') $('.twitter-container').hide();
-            if (data.linkedin == '') $('.linkedin-container').hide();
-            if (data.website == '') $('.website').hide();
-            if (data.email == '') $('.email-container').hide();
-            if (data.phone == '') $('.phone-container').hide();
+            if (data.facebook == '') {
+                $('.facebook-container').hide();
+            }
+            if (data.twitter == '') {
+                $('.twitter-container').hide();
+            }
+            if (data.linkedin == '') {
+                $('.linkedin-container').hide();
+            }
+            if (data.website == '') {
+                $('.website').hide();
+            }
+            if (data.email == '') {
+                $('.email-container').hide();
+            }
+            if (data.phone == '') {
+                $('.phone-container').hide();
+            }
 
             if (data.email == '' && data.phone == '') {
                 $('.contact-details').hide();
