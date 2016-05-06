@@ -1,6 +1,8 @@
 .member {
 	color: $black-color;
 	transition: 0.1s all linear;
+	display: block;
+	height: 22em;
 
 	img {
 		border-radius: 7px;

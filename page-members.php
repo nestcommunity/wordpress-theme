@@ -41,7 +41,7 @@ get_header(); ?>
 						?>
 						<?php while ( $theQuery->have_posts() ) : $theQuery->the_post(); ?>
 							<?php $postCounter++; ?>
-							<div class="columns small-3 <?php if ($postCounter == $numberOfPosts) echo 'end'; ?>">
+							<div class="columns medium-3 <?php if ($postCounter == $numberOfPosts) echo 'end'; ?>">
 								<?php if (get_post_type() == 'startup'): ?>
 									<a class="member company" href="<?php echo get_the_ID(); ?>">
 										<?php $logo = get_field('logo'); ?>
