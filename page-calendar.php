@@ -58,7 +58,7 @@ get_header(); ?>
 							$previousMonth = $date->format('F Y');
 						?>
 						<div class="calendar-item">
-							<h3><?php the_title(); ?></h3>
+							<h3 id="<?php the_field('anchor'); ?>"><?php the_title(); ?></h3>
 							<div class="row details">
 								<div class="columns medium-2 medium-offset-3">
 									<?php echo $date->format('j F Y'); ?>
