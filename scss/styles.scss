@@ -40,6 +40,7 @@ $primary-color: #00B19D;
 
 main.home {
 	background-image: url('../images/new-background.gif');
+	background-repeat: repeat-y;
 
 	@import 'home';
 }
