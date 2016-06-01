@@ -6,21 +6,21 @@
 	z-index: -5;
 
 	&.home-background {
-		background: linear-gradient(to top right, rgba(255, 0, 0, .75), rgba(31, 150, 104, .75)), url('../images/home-background.jpg');
+		background: url('../images/home-background.jpg');
 		background-position-x: center;
 		background-size: cover;
 		background-attachment: fixed;
 	}
 
 	&.about-background {
-		background: linear-gradient(to top right, rgba(255, 0, 0, .75), rgba(31, 150, 104, .75)), url('../images/about-background.jpg');
+		background: url('../images/about-background.jpg');
 		background-position: center;
 		background-size: cover;
 		background-attachment: fixed;
 	}
 
 	&.event-background {
-		background: linear-gradient(to top right, rgba(255, 0, 0, .75), rgba(31, 150, 104, .75)), url('../images/event-background.jpg');
+		background: url('../images/event-background.jpg');
 		background-position: center;
 		background-size: cover;
 		background-attachment: fixed;
@@ -28,8 +28,8 @@
 }
 
 .about {
-	margin-bottom: 8vh;
-	margin-top: 12vh;
+	padding-bottom: 8vh;
+	padding-top: 12vh;
 	z-index: 5;
 
 	.charlottely-headings {

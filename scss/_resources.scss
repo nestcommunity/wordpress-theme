@@ -12,7 +12,7 @@
 		transition: 0.1s all linear;
 
 		&:hover {
-			background-color: lighten($main-color, 3);
+			background-color: $green-color;
 			transition: 0.1s all linear;
 		}
 

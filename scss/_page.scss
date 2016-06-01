@@ -1,6 +1,6 @@
 .heading {
 	padding: 50px 0;
-	background: linear-gradient(to top right, rgba(255, 0, 0, .75), rgba(31, 150, 104, .75));
+	background: $black-color;
 
 	h1 {
 		text-align: center;
@@ -19,12 +19,12 @@
 
 	&.solid {
 		padding: 20px 0;
-		background: $main-color;
+		background: $black-color;
 	}
 }
 
 .contents {
-	background-image: url('../images/new-background.gif');
+	background-image: url('../images/background.png');
 	background-repeat: repeat-y;
 	padding: 60px 0;
 }

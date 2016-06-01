@@ -14,10 +14,9 @@ $secondary-font-family: "din-condensed-web",sans-serif;
 $text-font-family: "athelas",serif;
 $heading-font: Charlottely,serif;
 $black-color: #2D2D2D;
-$red-color: rgba(255, 0, 0, 0.75);
-$green-color: rgb(35, 152, 106);
-$main-color: #00B19D;
-$primary-color: #00B19D;
+$green-color: rgb(0, 255, 0);
+$main-color: orange;
+$primary-color: orange;
 
 @import 'settings';
 @import 'foundation';
@@ -39,7 +38,7 @@ $primary-color: #00B19D;
 
 
 main.home {
-	background-image: url('../images/new-background.gif');
+	background-image: url('../images/background.png');
 	background-repeat: repeat-y;
 
 	@import 'home';
@@ -87,12 +86,12 @@ p {
 	text-transform: uppercase;
 	font-size: 1.2em;
 	border-radius: 7px;
-	background-color: $red-color;
+	background-color: $primary-color;
 	margin-top: 10px;
 	margin-bottom: 30px;
 
 	&:hover {
-		background-color: darken($red-color, 10);
+		background-color: darken($primary-color, 10);
 	}
 }
 
