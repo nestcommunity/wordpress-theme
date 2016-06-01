@@ -86,12 +86,12 @@ p {
 	text-transform: uppercase;
 	font-size: 1.2em;
 	border-radius: 7px;
-	background-color: $primary-color;
+	background-color: $main-color;
 	margin-top: 10px;
 	margin-bottom: 30px;
 
 	&:hover {
-		background-color: darken($primary-color, 10);
+		background-color: darken($main-color, 10);
 	}
 }
 
