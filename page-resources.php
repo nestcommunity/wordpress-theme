@@ -24,6 +24,7 @@ get_header(); ?>
 						$args = array (
 								'post_type' => ['categories'],
 								'orderby' => 'title',
+								'order' => 'ASC',
 								'posts_per_page' => -1
 						);
 
