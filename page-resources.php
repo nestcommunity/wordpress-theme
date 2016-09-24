@@ -23,7 +23,7 @@ get_header(); ?>
 						<?php
 						$args = array (
 								'post_type' => ['categories'],
-								'orderby' => 'rand',
+								'orderby' => 'title',
 								'posts_per_page' => -1
 						);
 
