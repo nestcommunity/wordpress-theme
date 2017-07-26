@@ -3389,13 +3389,13 @@ main.members .contents .selector {
     font-size: 1.3em;
     padding: 10px 0;
     cursor: pointer;
-    background-color: white;
-    border: solid 1px #333; }
+    box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+    background-color: orange;
+    color: white;
+    border: solid 1px white; }
     main.members .contents .selector .individual-selector.active, main.members .contents .selector .company-selector.active {
-      box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
-      background-color: orange;
-      color: white;
-      border: solid 1px white; }
+      background-color: white;
+      border: solid 1px #333; }
   main.members .contents .selector .individual-selector {
     margin-left: -1px;
     border-bottom-right-radius: 20px;
