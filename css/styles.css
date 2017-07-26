@@ -3157,7 +3157,7 @@ select {
     font-weight: 400;
     margin-left: 15px;
     margin-right: 15px;
-    font-size: 1.5em; }
+    font-size: 1.2em; }
     .header .menu li.current-menu-item a::after {
       opacity: 1; }
     .header .menu li a {
@@ -3178,7 +3178,7 @@ select {
         background-color: lime; }
 
 .menu > li {
-  padding: 1.5em 0;
+  padding: 1.9em 0;
   list-style: none;
   text-align: center;
   font-size: 1em;
