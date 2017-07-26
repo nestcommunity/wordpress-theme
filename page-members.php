@@ -63,7 +63,7 @@ get_header(); ?>
 					</div>
 				</div>
 			</div>
-			<div class="overlay" style="display: none">
+			<div class="overlay" style="display: none; overflow:auto" >
 				<div class="overlay-box">
 					<a href="#" id="cross">x</a>
 					<div class="row">
@@ -83,6 +83,7 @@ get_header(); ?>
 							</div>
 						</div>
 						<div class="columns medium-9">
+							<!-- <a href="#" target="_blank" class="button website">Visit Website</a> -->
 							<h2 class="overlay-heading">Heading</h2>
 							<p class="overlay-description">Description</p>
 							<div class="row">
