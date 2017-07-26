@@ -3288,7 +3288,8 @@ main.home .page-background {
     background: url("../images/home-background.jpg");
     background-position-x: center;
     background-size: cover;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    background-position-y: bottom; }
   main.home .page-background.about-background {
     background: url("../images/about-background.jpg");
     background-position: center;
