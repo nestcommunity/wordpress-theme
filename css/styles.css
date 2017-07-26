@@ -3280,63 +3280,64 @@ footer {
 .button.project-exchange {
   max-width: 200px; }
 
-main.home {
-  background-image: url("../images/background.png");
-  background-repeat: repeat-y; }
+main.home .page-background {
+  width: 100%;
+  height: 65vh;
+  z-index: -5; }
+  main.home .page-background.home-background {
+    background: url("../images/home-background.jpg");
+    background-position-x: center;
+    background-size: cover;
+    background-attachment: fixed; }
+  main.home .page-background.about-background {
+    background: url("../images/about-background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; }
+  main.home .page-background.event-background {
+    background: url("../images/event-background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; }
+
+main.home .about {
+  padding-bottom: 8vh;
+  padding-top: 12vh;
+  z-index: 5; }
+  main.home .about .charlottely-headings h2 {
+    font-family: Charlottely, serif;
+    font-size: 7.5em;
+    line-height: 1em;
+    -ms-transform: rotate(354deg);
+    transform: rotate(354deg);
+    position: absolute;
+    margin-left: 60px; }
+  main.home .about .charlottely-headings h3 {
+    font-family: Charlottely, serif;
+    font-size: 6em;
+    line-height: 1em;
+    -ms-transform: rotate(354deg);
+    transform: rotate(354deg); }
+  main.home .about p:first-child {
+    margin-top: 100px; }
+
+@media (max-width: 1150px) {
+  main.home .about .charlottely-headings h2 {
+    font-size: 6em; } }
+
+@media (max-width: 940px) {
+  main.home .about .charlottely-headings h2 {
+    font-size: 4em; }
+  main.home .about p:first-child {
+    margin-top: 60px; } }
+
+@media (max-width: 640px) {
   main.home .page-background {
-    width: 100%;
-    height: 65vh;
-    z-index: -5; }
-    main.home .page-background.home-background {
-      background: url("../images/home-background.jpg");
-      background-position-x: center;
-      background-size: cover;
-      background-attachment: fixed; }
-    main.home .page-background.about-background {
-      background: url("../images/about-background.jpg");
-      background-position: center;
-      background-size: cover;
-      background-attachment: fixed; }
-    main.home .page-background.event-background {
-      background: url("../images/event-background.jpg");
-      background-position: center;
-      background-size: cover;
-      background-attachment: fixed; }
-  main.home .about {
-    padding-bottom: 8vh;
-    padding-top: 12vh;
-    z-index: 5; }
-    main.home .about .charlottely-headings h2 {
-      font-family: Charlottely, serif;
-      font-size: 7.5em;
-      line-height: 1em;
-      -ms-transform: rotate(354deg);
-      transform: rotate(354deg);
-      position: absolute;
-      margin-left: 60px; }
-    main.home .about .charlottely-headings h3 {
-      font-family: Charlottely, serif;
-      font-size: 6em;
-      line-height: 1em;
-      -ms-transform: rotate(354deg);
-      transform: rotate(354deg); }
-    main.home .about p:first-child {
-      margin-top: 100px; }
-  @media (max-width: 1150px) {
-    main.home .about .charlottely-headings h2 {
-      font-size: 6em; } }
-  @media (max-width: 940px) {
-    main.home .about .charlottely-headings h2 {
-      font-size: 4em; }
-    main.home .about p:first-child {
-      margin-top: 60px; } }
-  @media (max-width: 640px) {
-    main.home .page-background {
-      height: 300px; }
-    main.home .about .charlottely-headings h2 {
-      position: relative;
-      text-align: center;
-      margin-left: 0; } }
+    height: 300px; }
+  main.home .about .charlottely-headings h2 {
+    position: relative;
+    text-align: center;
+    margin-left: 0; } }
 
 main.general-page {
   padding-top: 113px; }
@@ -3358,8 +3359,6 @@ main.general-page {
       padding: 20px 0;
       background: #2D2D2D; }
   main.general-page .contents {
-    background-image: url("../images/background.png");
-    background-repeat: repeat-y;
     padding: 60px 0; }
 
 main.members .contents .member {
