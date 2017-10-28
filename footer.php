@@ -6,6 +6,7 @@
             </a>
         </div>
         <div class="columns medium-8">
+            <a href="https://www.instagram.com/nestportsmouth/" class="ss-icon ss-instagram"></a>
             <a href="<?php the_field('twitter', 'option'); ?>" class="ss-icon">&#xF611;</a>
             <a href="<?php the_field('facebook', 'option'); ?>" class="ss-icon">&#xF610;</a>
             <p>For inquiries, email <?php the_field('email', 'option'); ?></p>
