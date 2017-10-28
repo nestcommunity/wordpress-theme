@@ -2,7 +2,7 @@
     <div class="row">
         <div class="columns medium-2">
             <a href="http://www.port.ac.uk">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/uop-logo.svg" alt="University of Portsmouth" />
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/uop-logo-white.svg" alt="University of Portsmouth" />
             </a>
         </div>
         <div class="columns medium-8">

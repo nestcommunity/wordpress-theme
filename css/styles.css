@@ -8,7 +8,7 @@
 
 /**
  * Foundation for Sites by ZURB
- * Version 6.4.1
+ * Version 6.4.3
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
@@ -485,7 +485,8 @@ button {
   border: 0;
   border-radius: 0;
   background: transparent;
-  line-height: 1; }
+  line-height: 1;
+  cursor: auto; }
   [data-whatinput='mouse'] button {
     outline: 0; }
 
@@ -1321,74 +1322,74 @@ small {
   font-size: 80%;
   line-height: inherit; }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   color: inherit;
   text-rendering: optimizeLegibility; }
-  h1 small,
-  h2 small,
-  h3 small,
-  h4 small,
-  h5 small,
-  h6 small {
+  h1 small, .h1 small,
+  h2 small, .h2 small,
+  h3 small, .h3 small,
+  h4 small, .h4 small,
+  h5 small, .h5 small,
+  h6 small, .h6 small {
     line-height: 0;
     color: #cacaca; }
 
-h1 {
+h1, .h1 {
   font-size: 1.5rem;
   line-height: 1.4;
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
-h2 {
+h2, .h2 {
   font-size: 1.25rem;
   line-height: 1.4;
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
-h3 {
+h3, .h3 {
   font-size: 1.1875rem;
   line-height: 1.4;
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
-h4 {
+h4, .h4 {
   font-size: 1.125rem;
   line-height: 1.4;
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
-h5 {
+h5, .h5 {
   font-size: 1.0625rem;
   line-height: 1.4;
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
-h6 {
+h6, .h6 {
   font-size: 1rem;
   line-height: 1.4;
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
 @media print, screen and (min-width: 40em) {
-  h1 {
+  h1, .h1 {
     font-size: 3rem; }
-  h2 {
+  h2, .h2 {
     font-size: 2.5rem; }
-  h3 {
+  h3, .h3 {
     font-size: 1.9375rem; }
-  h4 {
+  h4, .h4 {
     font-size: 1.5625rem; }
-  h5 {
+  h5, .h5 {
     font-size: 1.25rem; }
-  h6 {
+  h6, .h6 {
     font-size: 1rem; } }
 
 a {
@@ -1846,6 +1847,9 @@ ul.no-bullet, ol.no-bullet {
     float: none;
     margin-left: 0; }
 
+a.button:hover, a.button:focus {
+  text-decoration: none; }
+
 [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'],
 textarea {
   display: block;
@@ -1996,13 +2000,18 @@ label {
   padding-top: 0;
   padding-bottom: 0;
   text-align: center;
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto; }
   .input-group-button a,
   .input-group-button input,
   .input-group-button button,
   .input-group-button label {
-    height: 2.5rem;
+    height: auto;
+    -ms-flex-item-align: stretch;
+    -ms-grid-row-align: stretch;
+    align-self: stretch;
     padding-top: 0;
     padding-bottom: 0;
     font-size: 1rem; }
@@ -3209,7 +3218,11 @@ select {
 footer {
   background-color: #2D2D2D;
   width: 100%;
-  padding: 35px 0; }
+  padding: 15px 0; }
+  footer img {
+    height: 60px; }
+  footer .medium-8 {
+    margin-top: 18px; }
   footer p, footer a {
     color: white;
     font-family: "din-condensed-web", sans-serif;
